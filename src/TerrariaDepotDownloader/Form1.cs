@@ -127,26 +127,26 @@ namespace TerrariaDepotDownloader
             textBox3.Text = Properties.Settings.Default.SteamPass;
 
             // Create Depot Folder
-            if (!Directory.Exists(Application.StartupPath + @"\TerrariaDepots"))
+            if (!Directory.Exists(Application.StartupPath + @"\SandstormDepots"))
             {
-                Directory.CreateDirectory(Application.StartupPath + @"\TerrariaDepots");
-                Properties.Settings.Default.DepotPath = Application.StartupPath + @"\TerrariaDepots";
+                Directory.CreateDirectory(Application.StartupPath + @"\SandstormDepots");
+                Properties.Settings.Default.DepotPath = Application.StartupPath + @"\SandstormDepots";
             }
-            textBox1.Text = Application.StartupPath + @"\TerrariaDepots";
+            textBox1.Text = Application.StartupPath + @"\SandstormDepots";
 
             // Populate Depot Setting Path
-            if (Directory.Exists(Application.StartupPath + @"\TerrariaDepots") && Properties.Settings.Default.DepotPath == "")
+            if (Directory.Exists(Application.StartupPath + @"\SandstormDepots") && Properties.Settings.Default.DepotPath == "")
             {
                 // Check If Overwrite Steam Directory Is Enabled
                 if (checkBox2.Checked)
                 {
                     // Overwrite Steam Directory Enabled
-                    Properties.Settings.Default.DepotPath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\Terraria";
+                    Properties.Settings.Default.DepotPath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\sandstorm";
                 }
                 else
                 {
                     // Overwrite Steam Directory Disabled
-                    Properties.Settings.Default.DepotPath = Application.StartupPath + @"\TerrariaDepots";
+                    Properties.Settings.Default.DepotPath = Application.StartupPath + @"\SandstormDepots";
                 }
             }
 
@@ -166,7 +166,7 @@ namespace TerrariaDepotDownloader
             // Add Tooltips - Update 1.8.5
             Tooltips.InitialDelay = 1000;
             Tooltips.SetToolTip(button1, "Close game and application");
-            Tooltips.SetToolTip(button2, "Download / Launch Terraria version");
+            Tooltips.SetToolTip(button2, "Download / Launch Sandstorm version");
             Tooltips.SetToolTip(button3, "Reload all installed versions");
             Tooltips.SetToolTip(button4, "Clear log of all entries");
             Tooltips.SetToolTip(button5, "Remove selected version");
@@ -498,10 +498,10 @@ namespace TerrariaDepotDownloader
         private void button1_Click(object sender, EventArgs e)
         {
             // Check For Any Open Clients
-            if (Process.GetProcessesByName("Terraria").Length > 0)
+            if (Process.GetProcessesByName("Insurgency").Length > 0)
             {
                 // Is running
-                foreach (var process in Process.GetProcessesByName("Terraria"))
+                foreach (var process in Process.GetProcessesByName("Insurgency"))
                 {
                     process.Kill();
                 }
@@ -612,18 +612,18 @@ namespace TerrariaDepotDownloader
                     if (itemRow.SubItems[2].Text == "Yes")
                     {
                         // Check If Client Is Currently Running - Update 1.8.3
-                        bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
+                        bool isRunning = Process.GetProcessesByName("Insurgency").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
                         if (isRunning)
                         {
                             // Is running
-                            foreach (var process in Process.GetProcessesByName("Terraria"))
+                            foreach (var process in Process.GetProcessesByName("Insurgency"))
                             {
                                 process.Kill();
 
                                 // Log Item
                                 if (checkBox1.Checked)
                                 {
-                                    Console.WriteLine("The Terraria process was killed to continue operations.");
+                                    Console.WriteLine("The Insurgency process was killed to continue operations.");
                                 }
                             }
                         }
@@ -648,10 +648,10 @@ namespace TerrariaDepotDownloader
         private void Button8_Click(object sender, EventArgs e)
         {
             // Check For Any Open Clients - Update 1.8.3
-            if (Process.GetProcessesByName("Terraria").Length > 0)
+            if (Process.GetProcessesByName("Insurgency").Length > 0)
             {
                 // Is running
-                foreach (var process in Process.GetProcessesByName("Terraria"))
+                foreach (var process in Process.GetProcessesByName("Insurgency"))
                 {
                     process.Kill();
 
@@ -756,28 +756,28 @@ namespace TerrariaDepotDownloader
                         {
                             try
                             {
-                                // Start Terraria Though Steam
+                                // Start Sandstorm Though Steam
                                 Process.Start("steam://rungameid/581320");
 
                                 // Do logging If Enabled
                                 if (checkBox1.Checked)
                                 {
-                                    Console.WriteLine("Successfully launched Terraria v" + File.ReadLines(Properties.Settings.Default.DepotPath + @"\changelog.txt").First().Split(' ')[1].ToString() + " Through Steam!");
+                                    Console.WriteLine("Successfully launched Sandstorm v" + File.ReadLines(Properties.Settings.Default.DepotPath + @"\changelog.txt").First().Split(' ')[1].ToString() + " Through Steam!");
                                 }
                             }
                             catch (Exception error)
                             {
-                                Console.WriteLine("Failed to launch Terraria v" + File.ReadLines(Properties.Settings.Default.DepotPath + @"\changelog.txt").First().Split(' ')[1].ToString() + ": " + error.Message.ToString());
+                                Console.WriteLine("Failed to launch Sandstorm v" + File.ReadLines(Properties.Settings.Default.DepotPath + @"\changelog.txt").First().Split(' ')[1].ToString() + ": " + error.Message.ToString());
                             }
                         }
                         else
                         {
                             try
                             {
-                                // Start Terraria By File
+                                // Start Sandstorm By File
                                 Process startPath = new Process();
                                 startPath.StartInfo.WorkingDirectory = Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text;
-                                startPath.StartInfo.FileName = Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text + @"\Terraria.exe";
+                                startPath.StartInfo.FileName = Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text + @"\Insurgency.exe";
                                 startPath.Start();
 
                                 // Do Logging If Enabled
@@ -819,18 +819,18 @@ namespace TerrariaDepotDownloader
                                     OutDir = Properties.Settings.Default.DepotPath;
 
                                     // Check If Client Is Already Running - Update 1.8.3
-                                    bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(OutDir, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
+                                    bool isRunning = Process.GetProcessesByName("Insurgency").FirstOrDefault(p => p.MainModule.FileName.StartsWith(OutDir, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
                                     if (isRunning)
                                     {
                                         // Is running
-                                        foreach (var process in Process.GetProcessesByName("Terraria"))
+                                        foreach (var process in Process.GetProcessesByName("Insurgency"))
                                         {
                                             process.Kill();
 
                                             // Log Item
                                             if (checkBox1.Checked)
                                             {
-                                                Console.WriteLine("The Terraria process was killed to continue operations.");
+                                                Console.WriteLine("The Insurgency process was killed to continue operations.");
                                             }
                                         }
                                     }
@@ -852,7 +852,7 @@ namespace TerrariaDepotDownloader
                                     // Log Item
                                     if (checkBox1.Checked)
                                     {
-                                        Console.WriteLine("Download prompt started for Terraria-v" + itemRow.SubItems[0].Text);
+                                        Console.WriteLine("Download prompt started for sandstorm-v" + itemRow.SubItems[0].Text);
                                     }
                                 }
                                 catch (Exception)
@@ -910,18 +910,18 @@ namespace TerrariaDepotDownloader
                                 OutDir = Properties.Settings.Default.DepotPath;
 
                                 // Check If Client Is Already Running - Update 1.8.3
-                                bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(OutDir, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
+                                bool isRunning = Process.GetProcessesByName("Insurgency").FirstOrDefault(p => p.MainModule.FileName.StartsWith(OutDir, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
                                 if (isRunning)
                                 {
                                     // Is running
-                                    foreach (var process in Process.GetProcessesByName("Terraria"))
+                                    foreach (var process in Process.GetProcessesByName("Insurgency"))
                                     {
                                         process.Kill();
 
                                         // Log Item
                                         if (checkBox1.Checked)
                                         {
-                                            Console.WriteLine("The Terraria process was killed to continue operations.");
+                                            Console.WriteLine("The Insurgency process was killed to continue operations.");
                                         }
                                     }
                                 }
@@ -943,7 +943,7 @@ namespace TerrariaDepotDownloader
                                 // Log Item
                                 if (checkBox1.Checked)
                                 {
-                                    Console.WriteLine("Download prompt started for Terraria-v" + itemRow.SubItems[0].Text);
+                                    Console.WriteLine("Download prompt started for sandstorm-v" + itemRow.SubItems[0].Text);
                                 }
                             }
                             catch (Exception)
@@ -989,18 +989,18 @@ namespace TerrariaDepotDownloader
                     if (itemRow.SubItems[2].Text == "Yes")
                     {
                         // Check If Client Is Currently Running - Update 1.8.3
-                        bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
+                        bool isRunning = Process.GetProcessesByName("Insurgency").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
                         if (isRunning)
                         {
                             // Is running
-                            foreach (var process in Process.GetProcessesByName("Terraria"))
+                            foreach (var process in Process.GetProcessesByName("Insurgency"))
                             {
                                 process.Kill();
 
                                 // Log Item
                                 if (checkBox1.Checked)
                                 {
-                                    Console.WriteLine("The Terraria process was killed to continue operations.");
+                                    Console.WriteLine("The Insurgency process was killed to continue operations.");
                                 }
                             }
                         }
@@ -1098,17 +1098,17 @@ namespace TerrariaDepotDownloader
                 else
                 {
                     // Prompt Yes, Create Directory, Change Textbox
-                    if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\Terraria"))
+                    if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\sandstorm"))
                     {
-                        Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\Terraria");
+                        Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\sandstorm");
                     }
-                    textBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\Terraria";
+                    textBox1.Text = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\sandstorm";
 
                     // Disable Path Changing
                     button6.Enabled = false;
 
                     // Update Settings
-                    Properties.Settings.Default.DepotPath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\Terraria";
+                    Properties.Settings.Default.DepotPath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\Steam\steamapps\common\sandstorm";
                     Properties.Settings.Default.OverwriteSteam = true;
                     Properties.Settings.Default.PathChangeEnabled = false;
 
@@ -1125,13 +1125,13 @@ namespace TerrariaDepotDownloader
             if (!checkBox2.Checked && Properties.Settings.Default.OverwriteSteam == true)
             {
                 // Checkbox Unchecked, Reset Textbox To Defualt Dir
-                textBox1.Text = Application.StartupPath + @"\TerrariaDepots";
+                textBox1.Text = Application.StartupPath + @"\SandstormDepots";
 
                 // Enable Path Changing
                 button6.Enabled = true;
 
                 // Update Settings
-                Properties.Settings.Default.DepotPath = Application.StartupPath + @"\TerrariaDepots";
+                Properties.Settings.Default.DepotPath = Application.StartupPath + @"\SandstormDepots";
                 Properties.Settings.Default.OverwriteSteam = false;
                 Properties.Settings.Default.PathChangeEnabled = true;
 
