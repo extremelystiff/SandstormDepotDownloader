@@ -223,7 +223,7 @@ namespace TerrariaDepotDownloader
                         else
                         {
                             // Check If Game Version Folder Exists
-                            if (Directory.Exists(Properties.Settings.Default.DepotPath + @"\Terraria-v" + String.Concat(line.TakeWhile(c => c != ','))))
+                            if (Directory.Exists(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + String.Concat(line.TakeWhile(c => c != ','))))
                             {
                                 // String Does Not Contain "null", Record Like Normal
                                 listView1.Items.Add(new ListViewItem(new string[] { String.Concat(line.TakeWhile(c => c != ',')), line.Substring(line.LastIndexOf(' ') + 1), "Yes" }));
@@ -432,10 +432,10 @@ namespace TerrariaDepotDownloader
                             else
                             {
                                 // Check If Game Version Folder Exists
-                                if (Directory.Exists(Properties.Settings.Default.DepotPath + @"\Terraria-v" + String.Concat(line.TakeWhile(c => c != ','))))
+                                if (Directory.Exists(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + String.Concat(line.TakeWhile(c => c != ','))))
                                 {
                                     // Check If Folder Is Not Empty - Update Feature
-                                    if (Directory.EnumerateFileSystemEntries(Properties.Settings.Default.DepotPath + @"\Terraria-v" + String.Concat(line.TakeWhile(c => c != ','))).Any())
+                                    if (Directory.EnumerateFileSystemEntries(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + String.Concat(line.TakeWhile(c => c != ','))).Any())
                                     {
                                         // String Does Not Contain "null", Record Like Normal
                                         listView1.Items.Add(new ListViewItem(new string[] { String.Concat(line.TakeWhile(c => c != ',')), line.Substring(line.LastIndexOf(' ') + 1), "Yes" }));
@@ -443,12 +443,12 @@ namespace TerrariaDepotDownloader
                                     else
                                     {
                                         // Delete Folder
-                                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\Terraria-v" + String.Concat(line.TakeWhile(c => c != ',')), true);
+                                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + String.Concat(line.TakeWhile(c => c != ',')), true);
 
                                         // Log Item
                                         if (checkBox1.Checked)
                                         {
-                                            Console.WriteLine("Removed empty folder: " + Properties.Settings.Default.DepotPath + @"\Terraria-v" + String.Concat(line.TakeWhile(c => c != ',')));
+                                            Console.WriteLine("Removed empty folder: " + Properties.Settings.Default.DepotPath + @"\sandstorm-v" + String.Concat(line.TakeWhile(c => c != ',')));
                                         }
 
                                         // String Does Not Contain "null", Record Like Normal
@@ -612,7 +612,7 @@ namespace TerrariaDepotDownloader
                     if (itemRow.SubItems[2].Text == "Yes")
                     {
                         // Check If Client Is Currently Running - Update 1.8.3
-                        bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
+                        bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
                         if (isRunning)
                         {
                             // Is running
@@ -629,12 +629,12 @@ namespace TerrariaDepotDownloader
                         }
 
                         // Delete Folder
-                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text, true);
+                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, true);
 
                         // Log Item
                         if (checkBox1.Checked)
                         {
-                            Console.WriteLine("Removed: " + Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text);
+                            Console.WriteLine("Removed: " + Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text);
                         }
 
                         // Update Forum
@@ -680,12 +680,12 @@ namespace TerrariaDepotDownloader
                     if (itemRow.SubItems[2].Text == "Yes")
                     {
                         // Delete Folder
-                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text, true);
+                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, true);
 
                         // Log Item
                         if (checkBox1.Checked)
                         {
-                            Console.WriteLine("Removed: " + Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text);
+                            Console.WriteLine("Removed: " + Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text);
                         }
                     }
                 }
@@ -776,8 +776,8 @@ namespace TerrariaDepotDownloader
                             {
                                 // Start Terraria By File
                                 Process startPath = new Process();
-                                startPath.StartInfo.WorkingDirectory = Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text;
-                                startPath.StartInfo.FileName = Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text + @"\Terraria.exe";
+                                startPath.StartInfo.WorkingDirectory = Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text;
+                                startPath.StartInfo.FileName = Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text + @"\Terraria.exe";
                                 startPath.Start();
 
                                 // Do Logging If Enabled
@@ -813,7 +813,7 @@ namespace TerrariaDepotDownloader
                                 String DLLLocation = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\DepotDownloader.dll";
                                 String DotNetLocation = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + @"\dotnet\dotnet.exe";
                                 // Update 1.5.0, Check If Everwrite To Steam Directory Is Enabled
-                                String OutDir = Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text;
+                                String OutDir = Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text;
                                 if (checkBox2.Checked) // Overwrite Steam Directory
                                 {
                                     OutDir = Properties.Settings.Default.DepotPath;
@@ -904,7 +904,7 @@ namespace TerrariaDepotDownloader
                             String DLLLocation = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\DepotDownloader.dll";
                             String DotNetLocation = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + @"\dotnet\dotnet.exe";
                             // Update 1.5.0, Check If Everwrite To Steam Directory Is Enabled
-                            String OutDir = Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text;
+                            String OutDir = Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text;
                             if (checkBox2.Checked) // Overwrite Steam Directory
                             {
                                 OutDir = Properties.Settings.Default.DepotPath;
@@ -989,7 +989,7 @@ namespace TerrariaDepotDownloader
                     if (itemRow.SubItems[2].Text == "Yes")
                     {
                         // Check If Client Is Currently Running - Update 1.8.3
-                        bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
+                        bool isRunning = Process.GetProcessesByName("Terraria").FirstOrDefault(p => p.MainModule.FileName.StartsWith(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, StringComparison.InvariantCultureIgnoreCase)) != default(Process);
                         if (isRunning)
                         {
                             // Is running
@@ -1006,12 +1006,12 @@ namespace TerrariaDepotDownloader
                         }
 
                         // Delete Folder
-                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text, true);
+                        Directory.Delete(Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text, true);
 
                         // Log Item
                         if (checkBox1.Checked)
                         {
-                            Console.WriteLine("Removed: " + Properties.Settings.Default.DepotPath + @"\Terraria-v" + itemRow.SubItems[0].Text);
+                            Console.WriteLine("Removed: " + Properties.Settings.Default.DepotPath + @"\sandstorm-v" + itemRow.SubItems[0].Text);
                         }
 
                         // Update Forum
