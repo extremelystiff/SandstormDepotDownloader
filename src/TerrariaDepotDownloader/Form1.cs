@@ -757,7 +757,7 @@ namespace TerrariaDepotDownloader
                             try
                             {
                                 // Start Terraria Though Steam
-                                Process.Start("steam://rungameid/105600");
+                                Process.Start("steam://rungameid/581320");
 
                                 // Do logging If Enabled
                                 if (checkBox1.Checked)
@@ -841,7 +841,7 @@ namespace TerrariaDepotDownloader
                                 }
                                 String ManifestID = itemRow.SubItems[1].Text;
                                 String EscapedPassword = Regex.Replace(textBox3.Text, @"[%|<>&^]", @"^$&"); // Escape Any CMD Special Characters If Any Exist // Update 1.8.5.2 Fix
-                                String Arg = "dotnet " + "\"" + DLLLocation + "\"" + " -app 105600 -depot 105601 -manifest " + ManifestID + " -username " + textBox2.Text + " -password " + EscapedPassword + " -dir " + "\"" + OutDir + "\"";
+                                String Arg = "dotnet " + "\"" + DLLLocation + "\"" + " -app 581320 -depot 581322 -manifest " + ManifestID + " -username " + textBox2.Text + " -password " + EscapedPassword + " -dir " + "\"" + OutDir + "\"";
 
                                 // Start Download
                                 try
@@ -932,7 +932,7 @@ namespace TerrariaDepotDownloader
                             }
                             String ManifestID = itemRow.SubItems[1].Text;
                             String EscapedPassword = Regex.Replace(textBox3.Text, @"[%|<>&^]", @"^$&"); // Escape Any CMD Special Characters If Any Exist // Update 1.8.5.2 Fix
-                            String Arg = "dotnet " + "\"" + DLLLocation + "\"" + " -app 105600 -depot 105601 -manifest " + ManifestID + " -username " + textBox2.Text + " -password " + EscapedPassword + " -dir " + "\"" + OutDir + "\"";
+                            String Arg = "dotnet " + "\"" + DLLLocation + "\"" + " -app 581320 -depot 581322 -manifest " + ManifestID + " -username " + textBox2.Text + " -password " + EscapedPassword + " -dir " + "\"" + OutDir + "\"";
 
                             // Start Download
                             try
