@@ -21,7 +21,7 @@ Note to Terraria's team: I have created this courtesyware in hopes to diminish p
 
 ## Download
 
-- [GitHub Releases](https://github.com/RussDev7/SandstormDepotDownloader/releases)
+- [GitHub Releases](https://github.com/extremelystiff/SandstormDepotDownloader/releases/)
 
 
 ## Support & Credits
