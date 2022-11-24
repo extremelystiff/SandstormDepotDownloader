@@ -1,8 +1,8 @@
-# Terraria Depot Downloader - Danny Russ
+# Sandstorm Depot Downloader
 
-[![Build status](https://ci.appveyor.com/api/projects/status/4je4mgn8thq15cf9?svg=true)](https://ci.appveyor.com/project/RussDev7/terrariadepotdownloader) [![GitHub Version](https://img.shields.io/github/tag/RussDev7/TerrariaDepotDownloader.svg?label=GitHub)](https://github.com/RussDev7/TerrariaDepotDownloader) [![Contributors](https://img.shields.io/github/contributors/RussDev7/TerrariaDepotDownloader)](https://github.com/RussDev7/TerrariaDepotDownloader)
+This tool is for Insurgency: Sandstorm, despite a lot of the naming scheme around this. This tool is origianlly made for Terraria by RussDev7. I will leave his readme here as the tool hasn't changed, just what game its downloading.
 
-![TDD](https://raw.githubusercontent.com/RussDev7/TerrariaDepotDownloader/main/src/TerrariaDepotDownloader/Resources/custom-terraria-logo1.png)
+
 
 TerrariaDepotDownloader - Downgrade your game to any of the past game versions where the steam manifest IDs are known.
 
@@ -17,12 +17,12 @@ Note to Terraria's team: I have created this courtesyware in hopes to diminish p
 
 - [Forums Link](https://forums.terraria.org/index.php?threads/terrariadepotdownloader-downgrade-to-any-version.107519/)
 - [Startup Guide](https://forums.terraria.org/index.php?threads/terrariadepotdownloader-downgrade-to-any-version.107519/)
-- [Discord](https://discord.gg/fEK6eE7W)
+
 
 ## Download
 
-- [GitHub Releases](https://github.com/RussDev7/TerrariaDepotDownloader/releases)
-- [Terraria Forums](https://forums.terraria.org/index.php?threads/terrariadepotdownloader-downgrade-to-any-version.107519/)
+- [GitHub Releases](https://github.com/RussDev7/SandstormDepotDownloader/releases)
+
 
 ## Support & Credits
 
