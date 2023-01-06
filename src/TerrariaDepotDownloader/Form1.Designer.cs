@@ -214,7 +214,7 @@ namespace TerrariaDepotDownloader
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(6, 83);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(143, 20);
+            this.checkBox4.Size = new System.Drawing.Size(142, 20);
             this.checkBox4.TabIndex = 15;
             this.checkBox4.Text = "Skip Update Check";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@ namespace TerrariaDepotDownloader
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(6, 20);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(97, 20);
+            this.checkBox1.Size = new System.Drawing.Size(96, 20);
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "Log Actions";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -240,7 +240,7 @@ namespace TerrariaDepotDownloader
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Location = new System.Drawing.Point(6, 41);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(112, 20);
+            this.checkBox3.Size = new System.Drawing.Size(111, 20);
             this.checkBox3.TabIndex = 13;
             this.checkBox3.Text = "Show Tooltips";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -251,7 +251,7 @@ namespace TerrariaDepotDownloader
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(6, 62);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(182, 20);
+            this.checkBox2.Size = new System.Drawing.Size(181, 20);
             this.checkBox2.TabIndex = 14;
             this.checkBox2.Text = "Overwrite Steam Directory";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@ namespace TerrariaDepotDownloader
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 16);
+            this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Account Name:";
             // 
@@ -344,7 +344,7 @@ namespace TerrariaDepotDownloader
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 16);
+            this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Password:";
             // 
@@ -474,8 +474,8 @@ namespace TerrariaDepotDownloader
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.BackgroundImage = global::TerrariaDepotDownloader.Properties.Resources.custom_terraria_logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(550, 113);
@@ -536,7 +536,7 @@ namespace TerrariaDepotDownloader
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(590, 490);
             this.Name = "Form1";
-            this.Text = "Terraria Depot Downloader";
+            this.Text = "Insurgency: Sandstorm Depot Downloader";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);

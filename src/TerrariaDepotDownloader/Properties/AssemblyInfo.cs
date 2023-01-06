@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TerrariaDepotDownloader")]
-[assembly: AssemblyDescription("Downloads Terraria Depot Manifests!")]
+[assembly: AssemblyTitle("InsurgencySandstormDepotDownloader")]
+[assembly: AssemblyDescription("Downloads Insurgency SandstormDepot Manifests!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("RussDev Inc©")]
+[assembly: AssemblyCompany("RussDev Inc©//Edited by ExtremelyStiff#5410")]
 [assembly: AssemblyProduct("Steam Depot Downloader")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.8.5.3")]
+[assembly: AssemblyFileVersion("1.8.5.4")]
