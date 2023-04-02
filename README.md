@@ -211,4 +211,4 @@ For some people, steam will try to keep Terraria up to date automatically. This 
 ## Support & Credits
 
 - [DepotDownloader API](https://github.com/SteamRE/DepotDownloader)
-- [Donations](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=imthedude030@gmail.com&lc=US&item_name=Donation&currency_code=USD&bn=PP%2dDonationsBF)
+- [RussDev7](https://github.com/RussDev7)
