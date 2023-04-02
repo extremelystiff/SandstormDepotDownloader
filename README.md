@@ -205,7 +205,7 @@ For some people, steam will try to keep Terraria up to date automatically. This 
 
 ## Download
 
-- [GitHub Releases](https://github.com/RussDev7/TerrariaDepotDownloader/releases)
+- [GitHub Releases](https://github.com/extremelystiff/SandstormDepotDownloader/releases)
 - [Terraria Forums](https://forums.terraria.org/index.php?threads/terrariadepotdownloader-downgrade-to-any-version.107519/)
 
 ## Support & Credits
